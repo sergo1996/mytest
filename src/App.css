@@ -1,0 +1,55 @@
+.App {
+  max-width:400px;
+  display:flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ margin:0 auto;
+
+ 
+}
+
+h1{
+ color: #f27121;
+  font-size: 45px;
+}
+
+
+.btn {
+  cursor: pointer;
+  font-size:15px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  background: #8a2387;
+
+}
+
+.btn:hover {
+color: aqua;
+  border: none;
+  outline: 0;
+}
+
+.btn:focus {
+color: black;
+  border: none;
+  outline: 0;
+}
+
+.btn:active {
+  border: none;  
+}
+
+.input {
+  background-color: whitesmoke;
+  color: black;
+  padding:15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  position: relative;
+  margin: 5px;
+}
