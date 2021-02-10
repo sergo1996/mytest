@@ -1,15 +1,11 @@
 import React from "react";
 import "./Item.scss";
-import Data from "./Data";
+import { format } from "date-fns";
 
 const Item = ({ id, item, list, setList, complete }) => {
   const remove = (id) => {
     setList(list.filter((el) => el.id !== id));
   };
-
-
-
-  
 
   const handleComplete = (id) => {
     setList(
@@ -56,12 +52,8 @@ const Item = ({ id, item, list, setList, complete }) => {
           fontSize: "20px",
         }}
       />
-      <img
-        onClick={() => handleComplete(id)}
-        src="https://img.icons8.com/offices/40/000000/checked-2--v2.png"
-        alt="complete task"
-      />
-      {/* <label class="toggle-switch">
+
+      <label className="toggle-switch">
         <input
           type="checkbox"
           className="toggle-switch-checkbox"
@@ -69,22 +61,32 @@ const Item = ({ id, item, list, setList, complete }) => {
           id="toggleSwitch"
         />
 
-        <label
+        <div
           onClick={() => handleComplete(id)}
           className="toggle-switch-label"
-          for="toggleSwitch"
+          htmlFor="toggleSwitch"
         >
           <span className="toggle-switch-inner"></span>
           <span className="toggle-switch-switch"></span>
-        </label>
-      </label> */}
-
+        </div>
+      </label>
+      <select
+        value={categoryId}
+        onChange={this.handleChange}
+        className="select"
+      >
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
       <img
         onClick={() => remove(id)}
         src="https://img.icons8.com/color/48/000000/trash.png"
         alt="Delete"
       />
-      <Data />
+      <span>{format(new Date(), "MM/dd/yyyy")}</span>
     </div>
   );
 };

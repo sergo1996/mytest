@@ -11,7 +11,7 @@
 }
 
 h1{
- color: #f27121;
+ color: #216af2;
   font-size: 45px;
 }
 
@@ -23,7 +23,7 @@ h1{
   border-radius: 10px;
   border: none;
   color: #fff;
-  background: #8a2387;
+  background: #b3ff00;
 
 }
 
@@ -52,4 +52,20 @@ color: black;
   outline: none;
   position: relative;
   margin: 5px;
+}
+
+.buttonSorteItem {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 15px;
+  background: rgb(64,199,129);
+  box-shadow: 0 -3px rgb(53,167,110) inset;
+  transition: 0.2s;
+} 
+.buttonSorteItem:hover { background: rgb(53, 167, 110); }
+.buttonSorteItem:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
 }

@@ -12,8 +12,13 @@ const array = () => {
 };
 
 function App() {
+  const [status, setStatus] = useState("");
   const [item, setItem] = useState("");
   const [list, setList] = useState(array);
+
+  React.useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(list));
+  }, [list]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,30 +35,39 @@ function App() {
     }
   };
 
-  React.useEffect(() => {
-    localStorage.setItem("data", JSON.stringify(list));
-  }, [list]);
-
   const handleChange = (e) => {
     setItem(e.target.value);
   };
 
   const sortArray = () => {
-    const sorted = list.sort((a, b) => {
-      return a.item - b.item;
+    const nameMass = list.concat();
+    const sorted = nameMass.sort((a, b) => {
+      return a.complete - b.complete;
     });
 
     setList(sorted);
   };
 
+  const sortStatus = () => {
+    const nameMass = list.concat();
+    const sorted = nameMass.sort((a, b) => {
+      return a.complete - b.complete;
+    });
+
+    setList(sorted);
+  };
+  console.log(status);
   return (
     <div className="App">
       <h1>Grocery List</h1>
-      <button onClick={() => sortArray()}>sorted name</button>
-      {/* <select onChange={(e) => sortArray(e.target.value)}>
-        <option value="false">ran out</option>
-        <option value="true">have</option>
-      </select> */}
+      <div>
+        <button className="buttonSorteItem" onClick={() => sortArray()}>
+          sorted by name
+        </button>
+        <button className="buttonSorteItem" onClick={() => sortStatus()}>
+          filter by status
+        </button>
+      </div>
 
       <form onSubmit={handleSubmit}>
         <input
